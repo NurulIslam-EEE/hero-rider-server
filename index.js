@@ -76,6 +76,12 @@ async function run() {
             res.json(result)
         })
 
+        app.get('/users', async (req, res) => {
+            const cursor = ridersCollection.find({});
+            const result = await cursor.toArray();
+            res.json(result)
+        })
+
     }
     finally {
         // await client.close();
